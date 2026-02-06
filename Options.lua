@@ -98,7 +98,7 @@ local GeneralTab =
                         MinimapButtonLeftClick = {
                             type = "select",
                             order = 4,
-                            name = "Left Click",
+                            name = "Clic izquierdo",
                             desc = "Action performed by left-clicking the minimap button.",
                             values = "values", get = "get", set = "set",
                             arg = function(value) return Addon.db.profile.MinimapButton.Commands, "LeftButton" end,
@@ -420,7 +420,7 @@ local SlashCommands = {
         PlayPause = {
             type = "execute",
             order = 1,
-            name = "Play/Pause Audio",
+            name = "Reproducir/Pausar audio",
             desc = "Play/Pause voiceovers",
             hidden = true,
             func = function(info)
@@ -460,7 +460,7 @@ local SlashCommands = {
         Clear = {
             type = "execute",
             order = 5,
-            name = "Clear Queue",
+            name = "Limpiar cola",
             desc = "Stop the playback and clears the voiceovers queue",
             func = function(info)
                 SoundQueue:RemoveAllSoundsFromQueue()
