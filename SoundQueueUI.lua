@@ -461,7 +461,7 @@ end
 function SoundQueueUI:InitMinimapButton()
     local buttons =
     {
-        { "LeftButton", "Left Click" },
+        { "LeftButton", "Clic izquierdo" },
         { "MiddleButton", "Middle Click" },
         { "RightButton", "Right Click" },
     }
