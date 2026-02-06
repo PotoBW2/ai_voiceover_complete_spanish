@@ -469,7 +469,7 @@ local SlashCommands = {
         Options = {
             type = "execute",
             order = 100,
-            name = "Open Options",
+            name = "Abrir Configuración",
             desc = "Open the options panel",
             func = function(info)
                 Options:OpenConfigWindow()

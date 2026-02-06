@@ -20,6 +20,4 @@ Copia la carpeta `generated` a la carpeta VoiceOverData_Vanilla, y luego las car
 Si deseas contribuir a este proyecto, no dudes en abrir un problema o enviar una solicitud de extracción.
 
 ## Traducción
-Este complemento esta siendo traducido por PotoBW su objetivo es poder usarlo en español completamente. No pretendemos quitarle el merito a los verdaderos creadores
-
-[mrthinger](https://github.com/mrthinger/wow-voiceover)
+Este complemento esta siendo traducido por PotoBW su objetivo es poder usarlo en español completamente. No pretendemos quitarle el merito a los verdaderos creadores ([mrthinger](https://github.com/mrthinger/wow-voiceover)).
