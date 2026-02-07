@@ -25,7 +25,7 @@ local FRAME_STRATAS =
 local slashCommandsHandler = {}
 function slashCommandsHandler:values(info)
     if not self.indexToName then
-        self.indexToName = { "Nothing" }
+        self.indexToName = { "Nada" }
         self.indexToCommand = { "" }
         self.commandToIndex = { [""] = 1 }
         for command, handler in Utils:Ordered(Options.table.args.SlashCommands.args, SortAceConfigOptions) do
@@ -196,7 +196,7 @@ local GeneralTab =
                     order = 7,
                     name = "Ocultar retrato de PNJ",
                     desc = "El retrato del NPC parlante no aparecerá cuando se reproduzca el audio de voz.\n\n" ..
-                            Utils:ColorizeText("Esto podría ser útil al usar otros complementos que reemplazan la experiencia de diálogo, como" ..
+                            Utils:ColorizeText("Esto podría ser útil al usar otros complementos que reemplazan la experiencia de diálogo, como " ..
                                 Utils:ColorizeText("Inmersión", NORMAL_FONT_COLOR_CODE) .. ".",
                                 GRAY_FONT_COLOR_CODE),
                     get = function(info) return Addon.db.profile.SoundQueueUI.HidePortrait end,
@@ -421,7 +421,7 @@ local SlashCommands = {
             type = "execute",
             order = 1,
             name = "Reproducir/Pausar audio",
-            desc = "Play/Pause voiceovers",
+            desc = "Reproducir/Pausar voces en off",
             hidden = true,
             func = function(info)
                 SoundQueue:TogglePauseQueue()
@@ -430,8 +430,8 @@ local SlashCommands = {
         Play = {
             type = "execute",
             order = 2,
-            name = "Play Audio",
-            desc = "Resume the playback of voiceovers",
+            name = "Reproducir audio",
+            desc = "Reanudar la reproducción de voces en off",
             func = function(info)
                 SoundQueue:ResumeQueue()
             end
@@ -439,8 +439,8 @@ local SlashCommands = {
         Pause = {
             type = "execute",
             order = 3,
-            name = "Pause Audio",
-            desc = "Pause the playback of voiceovers",
+            name = "Pausa el audio",
+            desc = "Pausar la reproducción de voces en off",
             func = function(info)
                 SoundQueue:PauseQueue()
             end
@@ -448,8 +448,8 @@ local SlashCommands = {
         Skip = {
             type = "execute",
             order = 4,
-            name = "Skip Line",
-            desc = "Skip the currently played voiceover",
+            name = "Saltar línea",
+            desc = "Omitir la voz en off que se está reproduciendo actualmente",
             func = function(info)
                 local soundData = SoundQueue:GetCurrentSound()
                 if soundData then
@@ -461,7 +461,7 @@ local SlashCommands = {
             type = "execute",
             order = 5,
             name = "Limpiar cola",
-            desc = "Stop the playback and clears the voiceovers queue",
+            desc = "Detiene la reproducción y borra la cola de voces en off",
             func = function(info)
                 SoundQueue:RemoveAllSoundsFromQueue()
             end
@@ -470,7 +470,7 @@ local SlashCommands = {
             type = "execute",
             order = 100,
             name = "Abrir Configuración",
-            desc = "Open the options panel",
+            desc = "Abra el panel de opciones",
             func = function(info)
                 Options:OpenConfigWindow()
             end
