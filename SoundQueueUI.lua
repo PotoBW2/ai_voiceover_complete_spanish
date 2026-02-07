@@ -462,8 +462,8 @@ function SoundQueueUI:InitMinimapButton()
     local buttons =
     {
         { "LeftButton", "Clic izquierdo" },
-        { "MiddleButton", "Middle Click" },
-        { "RightButton", "Right Click" },
+        { "MiddleButton", "Clic central" },
+        { "RightButton", "Clic derecho" },
     }
     local object = LibDataBroker:NewDataObject("VoiceOver", {
         type = "launcher",

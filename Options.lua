@@ -59,12 +59,12 @@ local GeneralTab =
             type = "group",
             order = 2,
             inline = true,
-            name = "Minimap Button",
+            name = "Botón de minimapa",
             args = {
                 MinimapButtonShow = {
                     type = "toggle",
                     order = 1,
-                    name = "Show Minimap Button",
+                    name = "Mostrar Botón en el minimapa",
                     get = function(info) return not Addon.db.profile.MinimapButton.LibDBIcon.hide end,
                     set = function(info, value)
                         Addon.db.profile.MinimapButton.LibDBIcon.hide = not value
@@ -78,7 +78,7 @@ local GeneralTab =
                 MinimapButtonLock = {
                     type = "toggle",
                     order = 2,
-                    name = "Lock Position",
+                    name = "Bloquear Posición",
                     get = function(info) return Addon.db.profile.MinimapButton.LibDBIcon.lock end,
                     set = function(info, value)
                         if value then
@@ -99,23 +99,23 @@ local GeneralTab =
                             type = "select",
                             order = 4,
                             name = "Clic izquierdo",
-                            desc = "Action performed by left-clicking the minimap button.",
+                            desc = "Acción que se realiza al hacer clic izquierdo en el botón del minimapa.",
                             values = "values", get = "get", set = "set",
                             arg = function(value) return Addon.db.profile.MinimapButton.Commands, "LeftButton" end,
                         },
                         MinimapButtonMiddleClick = {
                             type = "select",
                             order = 4,
-                            name = "Middle Click",
-                            desc = "Action performed by middle-clicking the minimap button.",
+                            name = "Clic central",
+                            desc = "Acción que se realiza al hacer clic central en el botón del minimapa.",
                             values = "values", get = "get", set = "set",
                             arg = function(value) return Addon.db.profile.MinimapButton.Commands, "MiddleButton" end,
                         },
                         MinimapButtonRightClick = {
                             type = "select",
                             order = 4,
-                            name = "Right Click",
-                            desc = "Action performed by right-clicking the minimap button.",
+                            name = "Clic derecho",
+                            desc = "Acción que se realiza al hacer clic derecho en el botón del minimapa.",
                             values = "values", get = "get", set = "set",
                             arg = function(value) return Addon.db.profile.MinimapButton.Commands, "RightButton" end,
                         }
@@ -127,14 +127,14 @@ local GeneralTab =
             type = "group",
             order = 3,
             inline = true,
-            name = "Frame",
+            name = "Marco",
             disabled = function(info) return Addon.db.profile.SoundQueueUI.HideFrame end,
             args = {
                 LockFrame = {
                     type = "toggle",
                     order = 1,
-                    name = "Lock Frame",
-                    desc = "Prevent the frame from being moved or resized.",
+                    name = "Bloquear Marco",
+                    desc = "Evitar que el marco se mueva o cambie de tamaño.",
                     get = function(info) return Addon.db.profile.SoundQueueUI.LockFrame end,
                     set = function(info, value)
                         Addon.db.profile.SoundQueueUI.LockFrame = value
@@ -144,8 +144,8 @@ local GeneralTab =
                 ResetFrame = {
                     type = "execute",
                     order = 2,
-                    name = "Reset Frame",
-                    desc = "Resets frame position and size back to default.",
+                    name = "Restablecer marco",
+                    desc = "Restablece la posición y el tamaño del marco a los valores predeterminados.",
                     func = function(info)
                         SoundQueueUI.frame:Reset()
                     end,
@@ -154,8 +154,8 @@ local GeneralTab =
                 FrameStrata = {
                     type = "select",
                     order = 5,
-                    name = "Frame Strata",
-                    desc = "Changes the \"depth\" of the frame, determining which other frames will it overlap or fall behind.",
+                    name = "Estrato de marco",
+                    desc = "Cambia la \"profundidad\" del marco, determinando qué otros marcos se superpondrán o quedarán detrás.",
                     values = FRAME_STRATAS,
                     get = function(info)
                         for k, v in ipairs(FRAME_STRATAS) do
