@@ -15,11 +15,11 @@ end
 -- Needed to preserve order (modern AceGUI has support for custom sorting of dropdown items, but old versions don't)
 local FRAME_STRATAS =
 {
-    "BACKGROUND",
-    "LOW",
-    "MEDIUM",
-    "HIGH",
-    "DIALOG",
+    "FONDO",
+    "BAJO",
+    "MEDIO",
+    "ALTO",
+    "DIÁLOGO",
 }
 
 local slashCommandsHandler = {}
