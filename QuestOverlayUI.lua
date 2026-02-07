@@ -70,7 +70,7 @@ function QuestOverlayUI:UpdatePlayButton(soundTitle, questID, questLogTitleFrame
             QuestOverlayUI.questPlayButtons[questID].soundData = {
                 event = Enums.SoundEvent.QuestAccept,
                 questID = questID,
-                name = id and DataModules:GetObjectName(type, id) or "Unknown Name",
+                name = id and DataModules:GetObjectName(type, id) or "Nombre Desconocido",
                 title = soundTitle,
                 unitGUID = id and Enums.GUID:CanHaveID(type) and Utils:MakeGUID(type, id) or nil
             }
