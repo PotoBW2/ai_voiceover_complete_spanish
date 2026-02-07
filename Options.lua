@@ -394,14 +394,14 @@ local LegacyWrathTab = (Version.IsLegacyWrath or Version.IsLegacyBurningCrusade 
 ---@type AceConfigOptionsTable
 local DataModulesTab =
 {
-    name = function() return format("Data Modules%s", next(Options.table.args.DataModules.args.Available.args) and "|cFF00CCFF (NEW)|r" or "") end,
+    name = function() return format("Módulos de datos%s", next(Options.table.args.DataModules.args.Available.args) and "|cFF00CCFF (Nuevo)|r" or "") end,
     type = "group",
     childGroups = "tree",
     order = 20,
     args = {
         Available = {
             type = "group",
-            name = "|cFF00CCFFAvailable|r",
+            name = "|cFF00CCFFDisponible|r",
             order = 100000,
             hidden = function(info) return not next(Options.table.args.DataModules.args.Available.args) end,
             args = {}
@@ -522,13 +522,13 @@ function Options:AddDataModule(module, order)
         type = "group",
         order = order,
         args = {
-            AddonName = MakeDescription("Addon Name", module.AddonName),
-            Title = MakeDescription("Title", module.Title),
-            ModuleVersion = MakeDescription("Module Data Format Version", module.ModuleVersion),
-            ModulePriority = MakeDescription("Module Priority", module.ModulePriority),
-            ContentVersion = MakeDescription("Content Version", module.ContentVersion),
-            LoadOnDemand = MakeDescription("Load on Demand", module.LoadOnDemand and "Yes" or "No"),
-            Loaded = MakeDescription("Is Loaded", function() return DataModules:GetModule(module.AddonName) and "Yes" or "No" end),
+            AddonName = MakeDescription("Nombre del Complemento", module.AddonName),
+            Title = MakeDescription("Título", module.Title),
+            ModuleVersion = MakeDescription("Versión del formato de datos del módulo", module.ModuleVersion),
+            ModulePriority = MakeDescription("Prioridad del módulo", module.ModulePriority),
+            ContentVersion = MakeDescription("Versión de contenido", module.ContentVersion),
+            LoadOnDemand = MakeDescription("Carga bajo demanda", module.LoadOnDemand and "Yes" or "No"),
+            Loaded = MakeDescription("Está cargado", function() return DataModules:GetModule(module.AddonName) and "Yes" or "No" end),
             NotLoadableReason = {
                 type = "description",
                 order = GetNextOrder(),
@@ -569,14 +569,14 @@ function Options:AddAvailableDataModule(module, order, update)
         type = "group",
         order = order,
         args = {
-            AddonName = MakeDescription("Addon Name", module.AddonName),
-            Title = MakeDescription("Title", module.Title),
-            ContentVersion = MakeDescription("Content Version", format(update and "%2$s -> |cFF00CCFF%1$s|r" or "%s", module.ContentVersion, update and DataModules:GetPresentModule(module.AddonName).ContentVersion)),
+            AddonName = MakeDescription("Nombre del complemento", module.AddonName),
+            Title = MakeDescription("Título", module.Title),
+            ContentVersion = MakeDescription("Versión de contenido", format(update and "%2$s -> |cFF00CCFF%1$s|r" or "%s", module.ContentVersion, update and DataModules:GetPresentModule(module.AddonName).ContentVersion)),
             URL = {
                 type = "input",
                 order = GetNextOrder(),
                 width = "full",
-                name = "Download URL",
+                name = "URL de descarga",
                 get = function(info) return module.URL end,
                 set = function(info) end,
             },
