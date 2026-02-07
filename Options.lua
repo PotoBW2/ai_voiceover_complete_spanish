@@ -527,8 +527,8 @@ function Options:AddDataModule(module, order)
             ModuleVersion = MakeDescription("Versión del formato de datos del módulo", module.ModuleVersion),
             ModulePriority = MakeDescription("Prioridad del módulo", module.ModulePriority),
             ContentVersion = MakeDescription("Versión de contenido", module.ContentVersion),
-            LoadOnDemand = MakeDescription("Carga bajo demanda", module.LoadOnDemand and "Yes" or "No"),
-            Loaded = MakeDescription("Está cargado", function() return DataModules:GetModule(module.AddonName) and "Yes" or "No" end),
+            LoadOnDemand = MakeDescription("Carga bajo demanda", module.LoadOnDemand and "Sí" or "No"),
+            Loaded = MakeDescription("Está cargado", function() return DataModules:GetModule(module.AddonName) and "Sí" or "No" end),
             NotLoadableReason = {
                 type = "description",
                 order = GetNextOrder(),
